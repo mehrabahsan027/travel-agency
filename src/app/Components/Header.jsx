@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,10 +18,10 @@ export default function Header() {
   ];
 
   return (
-    <header  className="flex justify-between items-center px-6 md:px-36 py-6 fixed top-0 left-0 right-0 z-50">
+    <header className="flex justify-between items-center px-6 md:px-36 py-6 fixed top-0 left-0 right-0 z-50 bg-white">
       {/* Logo */}
-      <div>
-        <Image src="/Logo.png" width={114} height={33} alt="Logo" />
+      <div className='w-[80px] lg:w-[114px] h-[33px]'>
+        <Image src="/Logo.png" width={100} height={100} alt="Logo" />
       </div>
 
       {/* Desktop Nav */}
@@ -46,23 +47,31 @@ export default function Header() {
         )}
       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="absolute top-full left-0 w-full  transition-opacity duration-500 ease-in-out bg-white shadow-md lg:hidden">
-          <ul className="flex flex-col space-y-4 px-6 py-4 text-center">
-            {links.map((item) => (
-              <li key={item.id} className="hover:text-orange-800 transition-colors">
-                <Link href={item.id} onClick={() => setIsOpen(false)}>
-                  {item.name}
-                </Link>
+      {/* Mobile Menu with Framer Motion */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="absolute top-full  left-0 w-full bg-white shadow-md lg:hidden"
+          >
+            <ul className="flex flex-col space-y-4 px-6 py-4 text-center">
+              {links.map((item) => (
+                <li key={item.id} className="hover:text-orange-800 transition-colors">
+                  <Link href={item.id} onClick={() => setIsOpen(false)}>
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+              <li className="hover:border-orange-800 bg-transparent px-5 py-2 border border-black cursor-pointer rounded w-max mx-auto">
+                Sign Up
               </li>
-            ))}
-            <li className="hover:border-orange-800 bg-transparent px-5 py-2 border border-black cursor-pointer rounded w-max mx-auto">
-              Sign Up
-            </li>
-          </ul>
-        </div>
-      )}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
