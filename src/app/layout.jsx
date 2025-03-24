@@ -17,10 +17,10 @@ export const poppins = Poppins({
 
 
 
-export const metadata = {
-  title: "Travel Agency --Jadoo",
-  description: "Travel Agency Landing Page",
-};
+// export const metadata = {
+//   title: "Travel Agency --Jadoo",
+//   description: "Travel Agency Landing Page",
+// };
 
 export default function RootLayout({ children }) {
   return (

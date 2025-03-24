@@ -17,12 +17,12 @@ export default function Services() {
 
 
   return (
-    <section className='  ' id='flights'>
+    <section  id='flights'>
         <div>
             
             <h4 className='text-[#5E6282] font-semibold text-lg mb-3 text-center'>CATEGORY</h4>
 
-            <h2 className={`${volkhov.className} font-bold text-black text-4xl lg:text-[50px] text-center mb-3`}>We Offer Best Services</h2>
+            <h2 className={`${volkhov.className} font-bold text-black text-3xl lg:text-[50px] text-center mb-3`}>We Offer Best Services</h2>
         </div>
         {/* className='flex flex-col items-center rounded-md' */}
 

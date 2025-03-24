@@ -10,7 +10,7 @@ export default function Bookings() {
         <h4 className="text-[#5E6282] font-semibold text-lg ">Easy and Fast</h4>
 
         <h2
-          className={`${volkhov.className} font-bold text-black text-4xl lg:text-[50px]  mb-3`}
+          className={`${volkhov.className} font-bold text-black text-3xl lg:text-[50px]  mb-3`}
         >
           Book your next trip <br />
           in 3 easy steps

@@ -20,9 +20,18 @@ export default function Header() {
   return (
     <header className="flex justify-between items-center px-6 md:px-36 py-6 fixed top-0 left-0 right-0 z-50 bg-white">
       {/* Logo */}
-      <div className='w-[80px] lg:w-[114px] h-[33px]'>
-        <Image src="/Logo.png" width={100} height={100} alt="Logo" />
-      </div>
+  
+
+
+
+<motion.div
+  initial={{ opacity: 0, y: -10, scale: 0.95 }}
+  animate={{ opacity: 1, y: 0, scale: 1 }}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+  className="w-[80px] lg:w-[114px] h-[33px]"
+>
+  <Image src="/Logo.png" width={100} height={100} alt="Logo" />
+</motion.div>
 
       {/* Desktop Nav */}
       <nav className="hidden lg:flex">

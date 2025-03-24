@@ -8,6 +8,12 @@ import Subscribe from "./Components/Subscribe";
 import Footer from "./Components/Footer";
 
 
+export const metadata = {
+  title: "Travel Agency --Jadoo",
+  description: "Travel Agency Landing Page",
+};
+
+
 export default function Home() {
   return (
     <>
