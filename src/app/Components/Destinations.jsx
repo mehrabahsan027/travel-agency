@@ -1,20 +1,19 @@
 import React from "react";
-import { volkhov } from "../layout";
+
+
+
 
 import CardDestinations from "./CardDestinations";
+import TopDestinations from "./TopDestinations";
 export default function Destinations() {
   return (
     <section className="w-full mt-5 " id='destinations'>
       <div>
-        <h4 className="text-[#5E6282] font-semibold text-lg text-center">
+        <h4 className="text-[#5E6282] font-semibold text-lg text-center overflow-hidden">
           Top Selling
         </h4>
 
-        <h2
-          className={`${volkhov.className} font-bold text-black text-4xl lg:text-[50px] text-center mb-3`}
-        >
-          Top Destinations
-        </h2>
+     <TopDestinations/>
       </div>
 
       {/* destinations  */}
